@@ -1,0 +1,336 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+body {
+  font-family: "kyokasho_l", "UD Digi Kyokasho NP-R", "YuKyokasho", "Meiryo";
+  margin: 0;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1b1b1b;
+}
+
+.header-logo {
+  margin: 7px 30px 7px 0;
+}
+
+.header-list ul {
+  display: flex;
+  color: #1b1b1b;
+}
+
+.header-list ul li {
+  margin-right: 20px;
+  padding: 19px 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+
+.header-list ul li a {
+  color: #1b1b1b;
+}
+
+.header-list ul li a:hover {
+  text-decoration: none;
+  border-bottom: solid 3px #c3b684;
+  color: #848484;
+  padding-bottom: 10px;
+}
+
+.info a {
+  border-bottom: solid 3px #c3b684;
+  padding-bottom: 10px;
+}
+
+/* なぜ下線黒くならん... */
+.info a:hover {
+  border-color: black;
+  color: #848484;
+  padding-bottom: 10px;
+}
+
+#main {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background-image: url("img/main.jpg");
+  background-repeat: no-repeat;
+}
+
+#main .logo {
+  position: absolute;
+  width: 100%;
+  height: 182px;
+  top: 50%;
+  margin-top: -91px;
+  text-align: center;
+}
+
+.commit {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.commit h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.commit p {
+  font-size: 18px;
+  margin: 40px 0;
+}
+
+.commit img {
+  margin-top: 40px;
+}
+
+.deta-btn {
+  display: block;
+  position: relative;
+  width: 170px;
+  padding: 0.4em;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1b1b;
+  background:　rgba(255,255,255,0);
+  border: 2px solid #585858;
+  margin: 0 auto;
+}
+
+.deta-btn:hover {
+  background: #1b1b1b;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.reco {
+  background-image: url(img/bg_donuts.jpg);
+  background-size: cover;
+  width: auto;
+  height: 530px;
+  object-fit: fill;
+  position: relative;
+  margin-top: 100px;
+}
+
+.reco h3 {
+  position: relative;
+  text-align: left;
+  left: 55%;
+  top: 20%;
+  font-size: 18px;
+}
+
+.reco h3 span {
+  font-size: 30px;
+}
+
+.reco article {
+  position: relative;
+  text-align: left;
+  left: 50%;
+  top: 30%;
+  font-size: 18px;
+}
+
+.donut {
+  position: relative;
+  top: 180px;
+  left: 17%;
+}
+
+.product {
+  text-align: center;
+  background: url(img/bg_beige.png);
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.product h2 {
+  margin-top: 0;
+  padding-top: 100px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.product article {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 40px 0;
+}
+
+.product p {
+  display: inline-block;
+  flex-direction: row;
+  margin-right: 25px;
+}
+
+.product .deta-btn {
+  margin-top: 65px;
+}
+
+.infometion h2 {
+  text-align: center;
+  padding: 65px 0;
+  border-bottom: solid 0.5px #c3b6847c;
+  font-size: 30px;
+}
+
+.infometion a {
+  border-bottom: 2px solid #585858;
+}
+
+.inquiry {
+  text-align: center;
+  background: url(img/bg_beige.png);
+  width: 100%;
+  padding: 60px 0;
+  margin-top: 100px;
+}
+
+.inquiry h2 {
+  font-size: 30px;
+  margin: 30px 0 60px;
+}
+
+.inquiry p {
+  font-size: 18px;
+}
+
+.map {
+  padding: 40px 0 100px;
+}
+
+.map h2 {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.map h3 {
+  margin-left: 160px;
+  font-size: 20px;
+}
+
+.map-inner {
+  padding: 0 160px;
+  display: flex;
+  font-size: 16px;
+}
+
+.map-inner th {
+  text-align: left;
+  padding-right: 50px;
+  padding-bottom: 25px;
+}
+
+.map-inner td {
+  padding-bottom: 25px;
+}
+
+.map-inner iframe {
+  position: relative;
+  left: 150px;
+  bottom: 40px;
+}
+
+.footer-list {
+  height: 250px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inc {
+  padding: 20px 40px;
+}
+
+.inc h2 {
+  padding-top: -20px;
+}
+
+.inc span {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.inc p {
+  font-size: 16px;
+  font-weight: 300;
+  font-size: 90%;
+  margin-top: 20px;
+}
+
+.footer-menu {
+  color: #1b1b1b;
+  margin: 0 auto;
+}
+
+.footer-menu ul {
+  width: 500px;
+  padding-top: 30px;
+  text-decoration: none;
+}
+
+.footer-menu ul li {
+  display: inline-block;
+  align-content: stretch;
+  text-align: left;
+  font-size: 90%;
+  margin-bottom: 8px;
+  margin-right: 13px;
+}
+
+.footer-menu ul li a {
+  color: #fff;
+}
+
+.footer-menu .one {
+  display: list-item;
+  width: 180px;
+  position: relative;
+  bottom: 13px;
+}
+
+.footer-menu .two {
+  display: list-item;
+  width: 180px;
+  position: relative;
+  left: 190px;
+  bottom: 105px;
+
+}
+
+.footer-menu .thr {
+  display: list-item;
+  width: 150px;
+  position: relative;
+  left: 380px;
+  bottom: 197px;
+}
+
+.sns {
+  text-align: right;
+  position: relative;
+  top: -170px;
+}
+
+.copy {
+  text-align: center;
+  height: 75px;
+  margin: 0;
+  padding-top: 20px;
+  font-size: 90%;
+}
+
