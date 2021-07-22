@@ -19,12 +19,21 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
 	<!-- スマホナビの表示・非表示 -->
 	<script>
+		// consoleで押したら "test"の表示ができた
+		const test = () =>{
+		console.log("test")
+		}
 	$(function() {
-		const hum = $('#hamburger, .close')
-		const nav = $('.sp-nav')
-		hum.on('click', function(){
-			nav.toggleClass('toggle');
-		});
+		console.log("test")
+
+		
+
+		// 元々のやつ
+		// const hum = $('#hamburger, .close')
+		// const nav = $('.sp-nav')
+		// hum.on('click', function(){
+		// 	nav.toggleClass('toggle');
+		// });
 	});
 	</script>
 </head>
@@ -57,7 +66,7 @@
 				<li class="close"><span>閉じる</span></li>
 			</ul>
 		</nav>
-		<div id="hamburger">
+		<div id="hamburger" onclick="test()">
 			<span></span>
 		</div>
 	</header>
