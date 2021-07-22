@@ -18,23 +18,13 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
 	<!-- スマホナビの表示・非表示 -->
+
 	<script>
-		// consoleで押したら "test"の表示ができた
-		const test = () =>{
-		console.log("test")
-		}
-	$(function() {
-		console.log("test")
-
-		
-
-		// 元々のやつ
-		// const hum = $('#hamburger, .close')
-		// const nav = $('.sp-nav')
-		// hum.on('click', function(){
-		// 	nav.toggleClass('toggle');
-		// });
-	});
+		$(function() {
+			$('#hamburger').on('click', function() {
+			console.log("クリックされました");
+			});
+		});
 	</script>
 </head>
 <body>
@@ -66,7 +56,7 @@
 				<li class="close"><span>閉じる</span></li>
 			</ul>
 		</nav>
-		<div id="hamburger" onclick="test()">
+		<div id="hamburger">
 			<span></span>
 		</div>
 	</header>
