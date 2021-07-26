@@ -15,12 +15,18 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
 	<!-- headerレスポンシブ用jQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- あれ？もしかして2つ3つバージョン違い読み込んでるから？ -->
+
+	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script> -->
+	<!-- スマホナビの表示・非表示 -->
 	<!-- <script>
 		$(function() {
-			$('#toggle').on('click', function() {
-				$('body').toggleClass('is-open');
+			const hum = $('#hamburger, .close')
+			const nav = $('.sp-nav')
+			hum.on('click', function(){
+				nav.toggleClass('toggle');
 			});
 		});
 	</script> -->
@@ -42,24 +48,20 @@
 			</ul>
 		</nav>
 		<!-- スマホ用メニュー -->
-		<div class="sp-nav">
-			<div id="toggle">
-				<div id="toggle-box">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-			<nav id="nav-content">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">News</a></li>
-					<li><a href="#">Menu</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Stylist</a></li>
-					<li><a href="#">Reserv</a></li>
-				</ul>
-			</nav>
+		<nav class="sp-nav">
+			<ul class="menu-ul">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Menu</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Stylist</a></li>
+				<li><a href="#">Reserv</a></li>
+				<!-- ハンバーガー用 閉じる -->
+				<li class="close"><span>閉じる</span></li>
+			</ul>
+		</nav>
+		<div id="hamburger">
+			<span></span>
 		</div>
 	</header>
 
@@ -249,9 +251,8 @@
 		<p>Copyright   2020.Blessing</p>
 	</footer>
 	<!-- slick jsの読込み -->
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	<!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
 	<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-
 	<!-- slickの設定 -->
 	<script type="text/javascript">
 		$(document).on('ready', function() {
@@ -263,19 +264,5 @@
 			});
 		});
 	</script>
-
-		<!-- headerレスポンシブ用jQuery -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script type="text/javascript">
-			$(function() {
-				// id="toggle"をクリックした時
-				$('#toggle').on('click', function() {
-					// body -> is-openのクラスに変わる
-					$('body').toggleClass('is-open');
-				});
-			});
-		</script>
-	
-
 	</body>
 </html>
