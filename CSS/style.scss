@@ -87,7 +87,12 @@ header {
 }
 
 
-
+@media screen and (min-width: 640px) {
+	// スマホメニューは非表示
+	.sp-nav {
+		display: none;
+	}
+}
 
 @media screen and (max-width: 640px) {
 	// pcは非表示に
@@ -95,122 +100,106 @@ header {
 		display: none;
 	}
 
-	// モバイル用
-	.sp-nav {
-		z-index: 1;
+// モバイル用
+	#toggle {
 		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		display: block;
-		width: 100%;
-		background: rgba(0, 0, 0, .8);
-		transition: all .2s ease-in-out;
-		opacity: 0;
+		top: 25px;
+		right: 25px;
+	}
 
-		// 閉じる
-		.close {
-			position: relative;
-			padding-left: 20px;
+	#toggle-box {
+		position: relative;
+		width: 36px;
+		height: 32px;
 
-			// バッテン1こ目の線
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 0;
-				display: block;
-				width: 16px;
-				height: 1px;
-				background-color: #fff;
-				transform: rotate( 45deg );
+		span {
+			width: 100%;
+			height: 1px;
+			left: 0;
+			display: block;
+			background: #000;
+			position: absolute;
+			transition: transform .6s ease-in-out, top .5s ease, bottom .5s ease;
+
+			&:nth-child(1) {
+				top: 0;
 			}
-			// バッテン2こ目の線
-			&::after {
-				content: '';
-				position: absolute;
+			&:nth-child(2) {
 				top: 50%;
-				left: 0;
-				display: block;
-				width: 16px;
-				height: 1px;
-				background: #fff;
-				transform: rotate( -45deg );
+				transform: translateY(-50%);
+			}
+			&:nth-child(3) {
+				bottom: 0;
 			}
 		}
 
+		&.is-open, span {
+			background: #fff;
+
+			&:nth-child(1) {
+				top: 50%;
+				transform: rotate(45deg), translateY(-50%);
+			}
+			&:nth-child(2) {
+				width: 0;
+			}
+			&:nth-child(3) {
+				top: 50%;
+				transform: rotate(-45deg), translateY(-50%);
+			}
+		}
+	}
+
+	// z-index
+	#toggle {
+		z-index: 1000;
+	}
+
+	// バーガー内のメニュー（最初は非表示で）
+	#nav-content {
+		z-index: 900;
+		overflow: auto;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		color: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		text-align: center;
+		opacity: 0;
+		transition: opacity .6s ease, visibility .6s ease;
+
 		ul {
-			padding: 0;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
+			list-style: none;
 
-			li {
-				margin: 0;
-				padding: 0;
+			a {
+				display: block;
+				color: #fff;
+				text-decoration: none;
+				padding: 30px 0;
+				transition: opacity .6s ease;
+				pointer-events: none;
 
-				span {
-					font-size: 15px;
-					color: #fff;
-
-					& a {
-						display: block;
-						padding: 20px 0;
-					}
+				&:hover {
+					opacity: 0.6;
 				}
 			}
 		}
 	}
 
-	#hamburger {
-		position: relative;
-		display: block;
-		width: 30px;
-		height: 25px;
-		margin: 0 0 0 auto;
+	// is-openのクラスが追加されるとメニュー表示に
+	.is-open {
+		overflow: hidden;
 
-		// 真ん中のハンバーグ
-		span {
-			position: absolute;
-			top: 50%;
-			left: 0;
-			display: block;
-			width: 100%;
-			height: 2px;
-			background-color: #000;
-			transform: translateY(-50%);
+		&#nav-content {
+			z-index: 999;
+			visibility: visible;
+			opacity: 1;
+
+			a {
+				pointer-events: auto;
+			}
 		}
-
-		// ハンバーガーの上のバンズ
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			background-color: #000;
-		}
-
-		// ハンバーガー下のバンズ
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 70%;
-			height: 2px;
-			background-color: #000;
-		}
-	}
-
-	.toggle {
-		transform: translateY( 0 );
-		opacity: 1;
 	}
 }
