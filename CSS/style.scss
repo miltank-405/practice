@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
-// color指定
+/* ==========▼▼▼ ここから変数の指定 ▼▼▼========== */
+/* color指定 */
 $main-color:#6e6e6e;
+
+/* ==========▲▲▲ ここまで変数の指定 ▲▲▲========== */
+
+/* ==========▼▼▼  ▼▼▼========== */
 
 // body全体の指定
 html, body {
@@ -15,6 +20,9 @@ html, body {
 		list-style: none;
 	}
 }
+/* ==========▲▲▲ ここまで ▲▲▲========== */
+
+/* ==========▼▼▼ ここから ▼▼▼========== */
 
 // ヘッダーの指定
 header {
@@ -49,7 +57,7 @@ header {
 		}
 	}
 
-	// ヘッダーナビの指定
+/* ヘッダーナビの指定 */	
 	nav {
 		display: inline-block;
 		position: relative;
@@ -88,14 +96,12 @@ header {
 
 
 
-/* 
-	▼▼▼　レスポンシブ用　▼▼▼
-*/
-//pcとspの幅を定義
-$pc: 741px; 
-$sp: 740px; 
+/* ==========▼▼▼ ここからレスポンシブ用 ▼▼▼========== */
+/* pcとspの幅を定義 */
+$pc: 641px; 
+$sp: 640px; 
 
-//max-widthを指定
+/* レスポンシブ用に横幅の指定 */
 @mixin pc {
 	@media (min-width: ($pc)) {
 		@content;
@@ -106,7 +112,7 @@ $sp: 740px;
 		@content;
 	}
 }
-//＠includeする事で、上記が適用される
+/* ＠includeを書いて、上記が適用される */
 .body img{
 	@include pc {
 		width: 350px;
@@ -117,7 +123,6 @@ $sp: 740px;
 		height: auto;
 	};
 }
-
 /* pc表示の時のヘッダーはスマホメニュー出さない */
 .pc-nav {
 	@include sp {
@@ -125,131 +130,122 @@ $sp: 740px;
 	}
 }
 
+/* ========== ここからスマホ用ヘッダーの指定 ========== */
+/* スマホ用メニュー（ハンバーガー実装） */
 .sp-nav {
-	
-	/* スマホ表示の時はヘッダーでPCメニュー出さない */
+	// スマホ表示の時はヘッダーでPCメニュー出さない
 	@include pc {
 		display: none;
 	}
+	// スマホ用 三 のスタイル
+	// ▼前面表示にしたいからz-indexは1を指定
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	// ▼全画面表示にしたいから100vhに指定
+	height: 100vh;
+	display: block;
+	background: rgba(0, 0, 0, 0.8);
+	// ▼三と閉じるを押した時に表示・非表示のアニメーション
+	transition: all .2s ease-in-out;
+
+	// リストの指定
+	ul {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+	li {
+		margin: 0;
+		padding: 0;
+		span {
+			font-size: 15px;
+			color: #fff;
+		}
+		a, span {
+			display: block;
+			padding: 20px 0;
+		}
+	}
+	// ▼閉じるボタンの装飾
+	// 基準のli要素
+	.close {
+		position: relative;
+		padding-left: 20px;
+		padding-bottom: 40px;
+		// Xの` 1こめ
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			width: 16px;
+			height: 1px;
+			background: #fff;
+			transform: rotate(45deg);
+		}
+		// Xの/ 2こめ
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			width: 16px;
+			height: 1px;
+			background: #fff;
+			transform: rotate(-45deg);
+		}
+		// ここまでやったった
+	}
+}
+/* ハンバーガーの棒三本 */
+#hamburger {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 25px;
+	margin: 0 0 0 auto;
+	// ハンバーガーの真ん中
+	span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: #333;
+		transform: translateY(-50%);
+	}
+	// ハンバーガーの上
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #333;
+	}
+	// ハンバーガーの下
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 70%;
+		height: 2px;
+		background-color: #333;
+	}
 }
 
-
-// モバイル用
-// 	.sp-nav {
-// 		z-index: 1;
-// 		position: fixed;
-// 		top: 0;
-// 		left: 0;
-// 		width: 100%;
-// 		height: 100vh;
-// 		display: block;
-// 		width: 100%;
-// 		background: rgba(0, 0, 0, .8);
-// 		transition: all .2s ease-in-out;
-// 		opacity: 0;
-
-// 		// 閉じる
-// 		.close {
-// 			position: relative;
-// 			padding-left: 20px;
-
-// 			// バッテン1こ目の線
-// 			&::before {
-// 				content: '';
-// 				position: absolute;
-// 				top: 50%;
-// 				left: 0;
-// 				display: block;
-// 				width: 16px;
-// 				height: 1px;
-// 				background-color: #fff;
-// 				transform: rotate( 45deg );
-// 			}
-// 			// バッテン2こ目の線
-// 			&::after {
-// 				content: '';
-// 				position: absolute;
-// 				top: 50%;
-// 				left: 0;
-// 				display: block;
-// 				width: 16px;
-// 				height: 1px;
-// 				background: #fff;
-// 				transform: rotate( -45deg );
-// 			}
-// 		}
-
-// 		ul {
-// 			padding: 0;
-// 			display: flex;
-// 			flex-direction: column;
-// 			justify-content: center;
-// 			align-items: center;
-// 			height: 100%;
-
-// 			li {
-// 				margin: 0;
-// 				padding: 0;
-
-// 				span {
-// 					font-size: 15px;
-// 					color: #fff;
-
-// 					& a {
-// 						display: block;
-// 						padding: 20px 0;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	#hamburger {
-// 		position: relative;
-// 		display: block;
-// 		width: 30px;
-// 		height: 25px;
-// 		margin: 0 0 0 auto;
-
-// 		// 真ん中のハンバーグ
-// 		span {
-// 			position: absolute;
-// 			top: 50%;
-// 			left: 0;
-// 			display: block;
-// 			width: 100%;
-// 			height: 2px;
-// 			background-color: #000;
-// 			transform: translateY(-50%);
-// 		}
-
-// 		// ハンバーガーの上のバンズ
-// 		&::before {
-// 			content: '';
-// 			display: block;
-// 			position: absolute;
-// 			top: 0;
-// 			left: 0;
-// 			width: 100%;
-// 			height: 2px;
-// 			background-color: #000;
-// 		}
-
-// 		// ハンバーガー下のバンズ
-// 		&::after {
-// 			content: '';
-// 			display: block;
-// 			position: absolute;
-// 			bottom: 0;
-// 			left: 0;
-// 			width: 70%;
-// 			height: 2px;
-// 			background-color: #000;
-// 		}
-// 	}
-
-// 	.toggle {
-// 		transform: translateY(0);
-// 		opacity: 1;
-// 	}
-// } 
+/* ========== ここまでスマホ用ヘッダーの指定 ========== */
+/* ==========▲▲▲ ここまでレスポンシブ用 ▲▲▲========== */
