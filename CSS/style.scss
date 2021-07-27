@@ -87,6 +87,7 @@ header {
 }
 
 
+
 @media screen and (max-width: 640px) {
 	// pcは非表示に
 	.pc-nav {
@@ -208,7 +209,7 @@ header {
 	}
 
 	.toggle {
-		transform: translateY( 0 );
+		transform: translateY(0);
 		opacity: 1;
 	}
 } 

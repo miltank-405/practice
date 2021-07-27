@@ -14,13 +14,20 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+	
 	<!-- headerレスポンシブ用jQuery -->
-
-<!-- あれ？もしかして2つ3つバージョン違い読み込んでるから？ -->
-	<!-- ver3.5.1はいらないっぽい -->
-	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> -->
-	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
+	<script　type="text/javascript" src="js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- スマホナビの表示・非表示 -->
+	<script>
+		$(window).on('load', function() {
+			const hum = $('#hamburger, .close')
+			const nav = $('.sp-nav')
+			hum.on('click', function(){
+				nav.toggleClass('toggle');
+			});
+		}(jQuery));
+	</script>
 	<!-- <script>
 		$(function() {
 			const hum = $('#hamburger, .close')
@@ -30,14 +37,6 @@
 			});
 		});
 	</script> -->
-<!-- jqueryのバージョンは何かコンソールに表示させてみる -->
-	<script>
-		(function($) {
-			$(function(){
-				console.info("jQuery = " + $.fn.jquery);
-			});
-		})(jQuery);
-	</script>
 </head>
 <body>
 	<header>
@@ -259,7 +258,9 @@
 		<p>Copyright   2020.Blessing</p>
 	</footer>
 	<!-- slick jsの読込み -->
-	<!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
+
 	<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
 	<!-- slickの設定 -->
 	<script type="text/javascript">
@@ -272,5 +273,6 @@
 			});
 		});
 	</script>
+	<!-- <script　type="text/javascript" src="js/script.js"></script> -->
 	</body>
 </html>
