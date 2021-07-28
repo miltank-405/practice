@@ -3,11 +3,11 @@
 /* ==========▼▼▼ ここから変数の指定 ▼▼▼========== */
 /* color指定 */
 $main-color:#6e6e6e;
-
+$name-color: #333;
+$sp-color: #fff
 /* ==========▲▲▲ ここまで変数の指定 ▲▲▲========== */
 
-/* ==========▼▼▼  ▼▼▼========== */
-
+/* ==========▼▼▼ ここから ▼▼▼========== */
 // body全体の指定
 html, body {
 	font-family: 'Sawarabi Gothic', sans-serif;
@@ -23,7 +23,6 @@ html, body {
 /* ==========▲▲▲ ここまで ▲▲▲========== */
 
 /* ==========▼▼▼ ここから ▼▼▼========== */
-
 // ヘッダーの指定
 header {
 	width: 100%;
@@ -47,13 +46,13 @@ header {
 		font-size: 30px;
 		position: absolute;
 		left: 0;
-		top: -8px;
+		top: 12px;
 		background: #fff;
 		padding: 0 10%;
 
 		// ヘッダーリンクの指定
 		a {
-			color: $main-color;
+			color: $name-color;
 		}
 	}
 
@@ -76,7 +75,7 @@ header {
 					bottom: 4px;
 					left: 0;
 					right:0;
-					content: '';
+					content: "";
 					width: 80%;
 					height: 2px;
 					background: #333;
@@ -124,10 +123,17 @@ $sp: 640px;
 	};
 }
 /* pc表示の時のヘッダーはスマホメニュー出さない */
-.pc-nav {
-	@include sp {
+// ハンバーガー表示されちゃうからcssにして消してみる
+	// .pc-nav {
+	// 	@include sp {
+	// 		display: none;
+	// 	}
+	// }
+@media screen and (min-width: 641px) {
+	.sp-nav {
 		display: none;
 	}
+	
 }
 
 /* ========== ここからスマホ用ヘッダーの指定 ========== */
@@ -150,6 +156,9 @@ $sp: 640px;
 	background: rgba(0, 0, 0, 0.8);
 	// ▼三と閉じるを押した時に表示・非表示のアニメーション
 	transition: all .2s ease-in-out;
+	// スマホメニューを一回非表示
+	opacity: 0;
+	transform: translateY(-100%);
 
 	// リストの指定
 	ul {
@@ -182,8 +191,8 @@ $sp: 640px;
 		&::before {
 			content: "";
 			position: absolute;
-			top: 50%;
-			left: 0;
+			top: 68%;
+			left: 38%;
 			display: block;
 			width: 16px;
 			height: 1px;
@@ -194,15 +203,14 @@ $sp: 640px;
 		&::after {
 			content: "";
 			position: absolute;
-			top: 50%;
-			left: 0;
+			top: 41%;
+			left: -9%;
 			display: block;
 			width: 16px;
 			height: 1px;
 			background: #fff;
 			transform: rotate(-45deg);
 		}
-		// ここまでやったった
 	}
 }
 /* ハンバーガーの棒三本 */
@@ -247,5 +255,10 @@ $sp: 640px;
 	}
 }
 
+// .toggleの指定
+.toggle {
+	transform: translateY(0);
+	opacity: 1;
+}
 /* ========== ここまでスマホ用ヘッダーの指定 ========== */
 /* ==========▲▲▲ ここまでレスポンシブ用 ▲▲▲========== */
