@@ -1,10 +1,14 @@
 @charset "UTF-8";
-/* ==========▼▼▼ ここから変数の指定 ▼▼▼========== */
+/*===================== 
+	変数の指定
+===================== */
 /* color指定 */
-/* ==========▲▲▲ ここまで変数の指定 ▲▲▲========== */
-/* ==========▼▼▼  ▼▼▼========== */
+/* font-familyの指定 */
+/* ====================
+	html & body
+==================== */
 html, body {
-  font-family: 'Sawarabi Gothic', sans-serif;
+  font-family: "Sawarabi Gothic", sans-serif;
   color: #6e6e6e;
   line-height: 1;
 }
@@ -17,8 +21,9 @@ html li, body li {
   list-style: none;
 }
 
-/* ==========▲▲▲ ここまで ▲▲▲========== */
-/* ==========▼▼▼ ここから ▼▼▼========== */
+/* ======================
+	header
+====================== */
 header {
   width: 100%;
   display: flex;
@@ -76,7 +81,7 @@ header nav .menu-ul li::after {
   bottom: 4px;
   left: 0;
   right: 0;
-  content: '';
+  content: "";
   width: 80%;
   height: 2px;
   background: #333;
@@ -90,153 +95,429 @@ header nav .menu-ul li:hover::after {
   transform: scale(1, 1);
 }
 
-/* ==========▼▼▼ ここからレスポンシブ用 ▼▼▼========== */
-/* pcとspの幅を定義 */
-/* レスポンシブ用に横幅の指定 */
-/* ＠includeを書いて、上記が適用される */
-@media (min-width: 641px) {
-  .body img {
-    width: 350px;
-    height: auto;
-  }
+/* ====================
+	News
+===================== */
+.news {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 120px;
+  margin-bottom: 80px;
 }
 
-@media (max-width: 640px) {
-  .body img {
-    width: 100%;
-    height: auto;
-  }
+.news h3 {
+  font-size: 25px;
+  text-align: center;
+  padding: 15px 55px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
-/* pc表示の時のヘッダーはスマホメニュー出さない */
-@media (max-width: 640px) {
-  .pc-nav {
-    display: none;
-  }
+.news h3::before, .news h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: #6e6e6e;
 }
 
-/* ========== ここからスマホ用ヘッダーの指定 ========== */
-/* スマホ用メニュー（ハンバーガー実装） */
-.sp-nav {
-  z-index: 1;
-  position: fixed;
+.news h3::before {
+  left: 0;
+}
+
+.news h3::after {
+  right: 0;
+}
+
+.news dl {
+  padding: 15px 0;
+  border-bottom: 1px solid #5a5a5a;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.news dt {
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+
+/* ====================
+	Menu
+==================== */
+.menu {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 120px;
+  margin-bottom: 80px;
+}
+
+.menu h3 {
+  font-size: 25px;
+  text-align: center;
+  padding: 15px 55px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu h3::before, .menu h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: #6e6e6e;
+}
+
+.menu h3::before {
+  left: 0;
+}
+
+.menu h3::after {
+  right: 0;
+}
+
+.menu table {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 13px;
+  width: 100%;
+}
+
+.menu table .td-left {
+  padding-left: 10%;
+}
+
+.menu table .td-right {
+  text-align: right;
+  padding-right: 10%;
+}
+
+.menu table th, .menu table td {
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.menu thead {
+  font-size: 20px;
+}
+
+.menu thead th {
+  padding-left: 10%;
+}
+
+.menu tbody {
+  margin-bottom: 30px;
+}
+
+.menu tbody:hover, .menu tbody td {
+  color: #6e6e6e;
+  background-color: #f4f3ef;
+}
+
+.menu tbody:hovertr:hover, .menu tbody tdtr:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+/* ===================
+	About
+==================== */
+.about {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+}
+
+.about h3 {
+  font-size: 25px;
+  text-align: center;
+  padding: 15px 55px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.about h3::before, .about h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: #6e6e6e;
+}
+
+.about h3::before {
+  left: 0;
+}
+
+.about h3::after {
+  right: 0;
+}
+
+.about .about_salon {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.about .about_salon img {
+  width: 230px;
+}
+
+.about .about_salon .salon_info {
+  font-size: 13px;
+  padding-left: 10%;
+  line-height: 2.3em;
+}
+
+.about .about_salon .salon_calender {
+  max-width: 800px;
+  min-width: 300px;
+  margin: 2.0833% auto;
+}
+
+.about .about_salon .google_cal {
+  position: relative;
+  padding-top: 10%;
+  height: 0;
+  overflow: hidden;
+}
+
+.about .about_salon .google_cal iframe, .about .about_salon .google_cal object, .about .about_salon .google_cal embed {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  display: block;
-  background: rgba(0, 0, 0, 0.8);
-  transition: all .2s ease-in-out;
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
-@media (min-width: 641px) {
-  .sp-nav {
-    display: none;
-  }
-}
-
-.sp-nav ul {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 }
 
-.sp-nav li {
-  margin: 0;
-  padding: 0;
+/* ====================
+	Stylist
+==================== */
+.stylist {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
 }
 
-.sp-nav li span {
-  font-size: 15px;
-  color: #fff;
-}
-
-.sp-nav li a, .sp-nav li span {
-  display: block;
-  padding: 20px 0;
-}
-
-.sp-nav .close {
+.stylist h3 {
+  font-size: 25px;
+  text-align: center;
+  padding: 15px 55px;
   position: relative;
-  padding-left: 20px;
-  padding-bottom: 40px;
+  display: inline-block;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
-.sp-nav .close::before {
+.stylist h3::before, .stylist h3::after {
   content: "";
-  position: absolute;
-  top: 68%;
-  left: 38%;
-  display: block;
-  width: 16px;
-  height: 1px;
-  background: #fff;
-  transform: rotate(45deg);
-}
-
-.sp-nav .close::after {
-  content: "";
-  position: absolute;
-  top: 41%;
-  left: -9%;
-  display: block;
-  width: 16px;
-  height: 1px;
-  background: #fff;
-  transform: rotate(-45deg);
-}
-
-/* ハンバーガーの棒三本 */
-#hamburger {
-  position: relative;
-  display: block;
-  width: 30px;
-  height: 25px;
-  margin: 0 0 0 auto;
-}
-
-#hamburger span {
   position: absolute;
   top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: #6e6e6e;
+}
+
+.stylist h3::before {
   left: 0;
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #333;
-  transform: translateY(-50%);
 }
 
-#hamburger::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #333;
+.stylist h3::after {
+  right: 0;
 }
 
-#hamburger::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 70%;
-  height: 2px;
-  background-color: #333;
+.stylist .image {
+  background-image: url("../img/stylist_img.jpg");
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-position: center top;
+  margin: 0 auto;
 }
 
-.toggle {
-  transform: translateY(0);
-  opacity: 1;
+/* ==========▼▼▼ ここからレスポンシブ用 ▼▼▼========== */
+/* ====================
+変数の指定
+==================== */
+/* ====================
+	メディアクエリ
+====================*/
+/* pc表示の時のヘッダーはスマホメニュー出さない */
+@media screen and (min-width: 640px) {
+  .sp-nav {
+    display: none;
+  }
+  .sp_google_cal {
+    display: none;
+  }
 }
 
-/* ========== ここまでスマホ用ヘッダーの指定 ========== */
+@media screen and (max-width: 640px) {
+  .pc-nav {
+    display: none;
+  }
+  /* ====================
+スマホ用ヘッダーの指定 
+==================== */
+  /* スマホ用メニュー（ハンバーガー実装） */
+  .sp-nav {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all .2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  .sp-nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .sp-nav li {
+    margin: 0;
+    padding: 0;
+  }
+  .sp-nav li span {
+    font-size: 15px;
+    color: #fff;
+  }
+  .sp-nav li a, .sp-nav li span {
+    display: block;
+    padding: 20px 0;
+  }
+  .sp-nav .close {
+    position: relative;
+    padding-left: 20px;
+    padding-bottom: 40px;
+  }
+  .sp-nav .close::before {
+    content: "";
+    position: absolute;
+    top: 68%;
+    left: 38%;
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  .sp-nav .close::after {
+    content: "";
+    position: absolute;
+    top: 41%;
+    left: -9%;
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: #fff;
+    transform: rotate(-45deg);
+  }
+  /* ====================
+		ハンバーガーの線
+	==================== */
+  #hamburger {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 25px;
+    margin: 0 0 0 auto;
+  }
+  #hamburger span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: translateY(-50%);
+  }
+  #hamburger::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+  }
+  #hamburger::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 2px;
+    background-color: #333;
+  }
+  /* ====================
+		toggleClass
+	====================*/
+  .toggle {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  /* ====================
+		About
+	==================== */
+  .about_salon {
+    display: block !important;
+  }
+  .about_salon img {
+    width: 100%;
+    margin: 5% 10%;
+  }
+  .about_salon .salon_info {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5% 10%;
+  }
+  .google_cal {
+    display: none !important;
+  }
+  .sp_google_cal {
+    margin: 0 auto;
+    padding: 0;
+  }
+  /* ====================
+		Stylist
+	==================== */
+  .stylist_progile {
+    display: block;
+    text-align: center;
+  }
+  .stylist_progile h4 {
+    font-size: 20px;
+  }
+}
+
 /* ==========▲▲▲ ここまでレスポンシブ用 ▲▲▲========== */

@@ -1,16 +1,20 @@
 @charset "UTF-8";
 
-/* ==========▼▼▼ ここから変数の指定 ▼▼▼========== */
+/*===================== 
+	変数の指定
+===================== */
 /* color指定 */
 $main-color:#6e6e6e;
 $name-color: #333;
-$sp-color: #fff
-/* ==========▲▲▲ ここまで変数の指定 ▲▲▲========== */
+$sp-color: #fff;
+/* font-familyの指定 */
+$font-family: 'Sawarabi Gothic', sans-serif;
 
-/* ==========▼▼▼ ここから ▼▼▼========== */
-// body全体の指定
+/* ====================
+	html & body
+==================== */
 html, body {
-	font-family: 'Sawarabi Gothic', sans-serif;
+	font-family: $font-family;
 	color: $main-color;
 	line-height: 1;
 	a {
@@ -20,10 +24,10 @@ html, body {
 		list-style: none;
 	}
 }
-/* ==========▲▲▲ ここまで ▲▲▲========== */
 
-/* ==========▼▼▼ ここから ▼▼▼========== */
-// ヘッダーの指定
+/* ======================
+	header
+====================== */
 header {
 	width: 100%;
 	display: flex;
@@ -93,35 +97,278 @@ header {
 	}
 }
 
+/* ====================
+	News
+===================== */
+.news {
+	// 見出し
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	// お知らせの中身
+	dl {
+		padding: 15px 0;
+		border-bottom: 1px solid rgb(90, 90, 90);
+		font-weight: 200;
+		font-size: 13px;
+	}
+	dt {
+		padding-bottom: 5px;
+		font-size: 13px;
+	}
+}
+
+/* ====================
+	Menu
+==================== */
+.menu {
+	// 見出し
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	// メニューの中身
+	table {
+		margin-right: auto;
+		margin-left: auto;
+		font-size: 13px;
+		width: 100%;
+		.td-left {
+			padding-left: 10%;
+		}
+		.td-right {
+			text-align: right;
+			padding-right: 10%;
+		}
+		th, td {
+			padding: 10px;
+			transition: 0.2s;
+		}
+	}
+	thead {
+		font-size: 20px;
+		th {
+			padding-left: 10%;
+		}
+	}
+	tbody {
+		margin-bottom: 30px;
+		&:hover, td {
+			color: $main-color;
+			background-color: #f4f3ef;
+			&tr:hover {
+				color: #333;
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+/* ===================
+	About
+==================== */
+.about {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	// 見出し
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	.about_salon {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		// aboutの中身
+		img {
+			width: 230px;
+		}
+		.salon_info {
+			font-size: 13px;
+			padding-left: 10%;
+			line-height: 2.3em;
+		}
+		.salon_calender {
+			max-width: 800px;
+			min-width: 300px;
+			margin: 2.0833% auto;
+		}
+		.google_cal {
+			position: relative;
+			padding-top: 10%;
+			height: 0;
+			overflow: hidden;
+			iframe, object, embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+/* ====================
+	Stylist
+==================== */
+.stylist {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	// 見出し
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	.image {
+		background-image: url("../img/stylist_img.jpg");
+		width: 250px;
+		height: 250px;
+		border-radius: 50%;
+		background-position: center top;
+		margin: 0 auto;
+	}
+	
+}
+
+
+
+
+
 
 
 /* ==========▼▼▼ ここからレスポンシブ用 ▼▼▼========== */
-/* pcとspの幅を定義 */
-$pc: 641px; 
-$sp: 640px; 
+/* ====================
+変数の指定
+==================== */
+// PCの指定
+// $pc: 641px;
+// スマホの指定
+// $sp: 640px; 
 
-/* レスポンシブ用に横幅の指定 */
-@mixin pc {
-	@media (min-width: ($pc)) {
-		@content;
-	}
-}
-@mixin sp {
-	@media (max-width: ($sp)) {
-		@content;
-	}
-}
-/* ＠includeを書いて、上記が適用される */
-.body img{
-	@include pc {
-		width: 350px;
-		height: auto;
-	};
-	@include sp {
-		width: 100%;
-		height: auto;
-	};
-}
+/* ====================
+	メディアクエリ
+====================*/
+// @mixin pc {
+// 	@media (min-width: ($pc)) {
+// 		@content;
+// 	}
+// }
+// @mixin sp {
+// 	@media (max-width: ($sp)) {
+// 		@content;
+// 	}
+// }
+// ＠includeを書いて上を適用
+// .body img{
+// 	@include pc {
+// 		width: 350px;
+// 		height: auto;
+// 	};
+// 	@include sp {
+// 		width: 100%;
+// 		height: auto;
+// 	};
+// }
 /* pc表示の時のヘッダーはスマホメニュー出さない */
 // ハンバーガー表示されちゃうからcssにして消してみる
 	// .pc-nav {
@@ -129,136 +376,191 @@ $sp: 640px;
 	// 		display: none;
 	// 	}
 	// }
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 640px){
+	// スマホ用ヘッダー非表示
 	.sp-nav {
 		display: none;
 	}
-	
-}
-
-/* ========== ここからスマホ用ヘッダーの指定 ========== */
-/* スマホ用メニュー（ハンバーガー実装） */
-.sp-nav {
-	// スマホ表示の時はヘッダーでPCメニュー出さない
-	@include pc {
+	// スマホ用Googleカレンダー非表示
+	.sp_google_cal {
 		display: none;
 	}
-	// スマホ用 三 のスタイル
-	// ▼前面表示にしたいからz-indexは1を指定
-	z-index: 1;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	// ▼全画面表示にしたいから100vhに指定
-	height: 100vh;
-	display: block;
-	background: rgba(0, 0, 0, 0.8);
-	// ▼三と閉じるを押した時に表示・非表示のアニメーション
-	transition: all .2s ease-in-out;
-	// スマホメニューを一回非表示
-	opacity: 0;
-	transform: translateY(-100%);
-
-	// リストの指定
-	ul {
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-	}
-	li {
-		margin: 0;
-		padding: 0;
-		span {
-			font-size: 15px;
-			color: #fff;
-		}
-		a, span {
-			display: block;
-			padding: 20px 0;
-		}
-	}
-	// ▼閉じるボタンの装飾
-	// 基準のli要素
-	.close {
-		position: relative;
-		padding-left: 20px;
-		padding-bottom: 40px;
-		// Xの` 1こめ
-		&::before {
-			content: "";
-			position: absolute;
-			top: 68%;
-			left: 38%;
-			display: block;
-			width: 16px;
-			height: 1px;
-			background: #fff;
-			transform: rotate(45deg);
-		}
-		// Xの/ 2こめ
-		&::after {
-			content: "";
-			position: absolute;
-			top: 41%;
-			left: -9%;
-			display: block;
-			width: 16px;
-			height: 1px;
-			background: #fff;
-			transform: rotate(-45deg);
-		}
-	}
 }
-/* ハンバーガーの棒三本 */
-#hamburger {
-	position: relative;
-	display: block;
-	width: 30px;
-	height: 25px;
-	margin: 0 0 0 auto;
-	// ハンバーガーの真ん中
-	span {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 2px;
-		background-color: #333;
-		transform: translateY(-50%);
+
+@media screen and (max-width: 640px) {
+	// PC用ヘッダー非表示
+	.pc-nav {
+		display: none;
 	}
-	// ハンバーガーの上
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
+
+
+/* ====================
+スマホ用ヘッダーの指定 
+==================== */
+/* スマホ用メニュー（ハンバーガー実装） */
+	.sp-nav {
+		// スマホ表示の時はヘッダーでPCメニュー出さない
+		
+		// @include pc {
+		// 	display: none;
+		// }
+
+
+		// スマホ用 三 のスタイル
+		// ▼前面表示にしたいからz-indexは1を指定
+		z-index: 1;
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 2px;
-		background-color: #333;
-	}
-	// ハンバーガーの下
-	&::after {
-		content: "";
+		// ▼全画面表示にしたいから100vhに指定
+		height: 100vh;
 		display: block;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 70%;
-		height: 2px;
-		background-color: #333;
+		background: rgba(0, 0, 0, 0.8);
+		// ▼三と閉じるを押した時に表示・非表示のアニメーション
+		transition: all .2s ease-in-out;
+		// スマホメニューを一回非表示
+		opacity: 0;
+		transform: translateY(-100%);
+
+		// リストの指定
+		ul {
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+		li {
+			margin: 0;
+			padding: 0;
+			span {
+				font-size: 15px;
+				color: #fff;
+			}
+			a, span {
+				display: block;
+				padding: 20px 0;
+			}
+		}
+		// ▼閉じるボタンの装飾
+		// 基準のli要素
+		.close {
+			position: relative;
+			padding-left: 20px;
+			padding-bottom: 40px;
+			// Xの` 1こめ
+			&::before {
+				content: "";
+				position: absolute;
+				top: 68%;
+				left: 38%;
+				display: block;
+				width: 16px;
+				height: 1px;
+				background: #fff;
+				transform: rotate(45deg);
+			}
+			// Xの/ 2こめ
+			&::after {
+				content: "";
+				position: absolute;
+				top: 41%;
+				left: -9%;
+				display: block;
+				width: 16px;
+				height: 1px;
+				background: #fff;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	/* ====================
+		ハンバーガーの線
+	==================== */
+	#hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 0 0 auto;
+		// ハンバーガーの真ん中
+		span {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: #333;
+			transform: translateY(-50%);
+		}
+		// ハンバーガーの上
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: #333;
+		}
+		// ハンバーガーの下
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 70%;
+			height: 2px;
+			background-color: #333;
+		}
+	}
+
+	/* ====================
+		toggleClass
+	====================*/
+	.toggle {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	/* ====================
+		About
+	==================== */
+	.about_salon {
+		display: block !important;
+		img {
+			width: 100%;
+			margin: 5% 10%;
+		}
+		.salon_info {
+			width: 100%;
+			margin: 0 auto;
+			padding: 5% 10%;
+		}
+	}
+	// PC用カレンダー非表示
+	.google_cal {
+		display: none !important;
+	}
+	.sp_google_cal {
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	/* ====================
+		Stylist
+	==================== */
+	.stylist_progile {
+		display: block;
+		text-align: center;
+		h4 {
+			font-size: 20px;
+		}
 	}
 }
-
-// .toggleの指定
-.toggle {
-	transform: translateY(0);
-	opacity: 1;
-}
-/* ========== ここまでスマホ用ヘッダーの指定 ========== */
 /* ==========▲▲▲ ここまでレスポンシブ用 ▲▲▲========== */
