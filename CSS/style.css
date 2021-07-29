@@ -11,6 +11,8 @@ html, body {
   font-family: "Sawarabi Gothic", sans-serif;
   color: #6e6e6e;
   line-height: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html a, body a {
@@ -19,6 +21,11 @@ html a, body a {
 
 html li, body li {
   list-style: none;
+}
+
+html::before, html::after, body::before, body::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* ======================
@@ -354,6 +361,166 @@ header nav .menu-ul li:hover::after {
   margin: 0 auto;
 }
 
+.stylist .stylist_profile {
+  text-align: center;
+  line-height: 2.0em;
+  margin-top: 10%;
+}
+
+.stylist .stylist_profile h4 {
+  font-size: 20px;
+}
+
+.stylist .stylist_profile p {
+  font-size: 14px;
+}
+
+/* ====================
+	Reservation
+==================== */
+.reservation {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+}
+
+.reservation h3 {
+  font-size: 25px;
+  text-align: center;
+  padding: 15px 55px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.reservation h3::before, .reservation h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: #6e6e6e;
+}
+
+.reservation h3::before {
+  left: 0;
+}
+
+.reservation h3::after {
+  right: 0;
+}
+
+.reservation .btn_reserv {
+  line-height: 1.5em;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+.reservation .btn_reserv section {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.reservation .btn_reserv section .line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.reservation .btn_reserv section .line::before, .reservation .btn_reserv section .line::after {
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #4d4d4d;
+}
+
+.reservation .btn_reserv section .line::before {
+  margin-right: 18px;
+  transform: rotate(-35deg);
+}
+
+.reservation .btn_reserv section .line::after {
+  margin-left: 18px;
+  transform: rotate(35deg);
+}
+
+.reservation .btn_reserv section p {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.reservation a.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 50px;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.reservation a.btn:hover span {
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #fff;
+}
+
+.reservation a.btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 50px;
+  background: #fff;
+  box-sizing: border-box;
+  color: #4d4d4d;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  transition-duration: 0.2s;
+}
+
+.reservation .remark_column {
+  margin-top: 30px;
+  padding: 0 10%;
+  font-size: 14px;
+  width: 100%;
+  line-height: 1.8em;
+}
+
+/* ====================
+	Address
+==================== */
+.address {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 120px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.address h3 {
+  font-size: 30px;
+  text-align: center;
+  padding: 15px 55px;
+  position: relative;
+  display: inline-block;
+}
+
 /* ==========▼▼▼ ここからレスポンシブ用 ▼▼▼========== */
 /* ====================
 変数の指定
@@ -511,12 +678,13 @@ header nav .menu-ul li:hover::after {
   /* ====================
 		Stylist
 	==================== */
-  .stylist_progile {
-    display: block;
+  .stylist_profile {
+    display: block !important;
     text-align: center;
   }
-  .stylist_progile h4 {
+  .stylist_profile h4 {
     font-size: 20px;
+    padding: 10% 0;
   }
 }
 

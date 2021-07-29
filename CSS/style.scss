@@ -17,11 +17,17 @@ html, body {
 	font-family: $font-family;
 	color: $main-color;
 	line-height: 1;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	a {
 		text-decoration: none;
 	}
 	li {
 		list-style: none;
+	}
+	&::before, &::after {
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit;
 	}
 }
 
@@ -327,12 +333,153 @@ header {
 		background-position: center top;
 		margin: 0 auto;
 	}
-	
+	.stylist_profile {
+		text-align: center;
+		line-height: 2.0em;
+		margin-top: 10%;
+		h4 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 14px;
+		}
+	}
 }
 
+/* ====================
+	Reservation
+==================== */
+.reservation {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	// 見出し
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	// ボタンのスタイル
+	.btn_reserv {
+		line-height: 1.5em;
+		display: flex;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 14px;
+		section {
+			max-width: 300px;
+			margin: 0 auto;
+			// ボタンの下の文字
+			.line {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				&::before, &::after {
+					content: "";
+					width: 1px;
+					height: 20px;
+					background-color: #4d4d4d;
+				}
+				&::before {
+					margin-right: 18px;
+					transform: rotate(-35deg);
+				}
+				&::after {
+					margin-left: 18px;
+					transform: rotate(35deg);
+				}
+			}
+			p {
+				margin-top: 15px;
+				font-size: 15px;
+			}
+		}
+	}
+	a.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 98%;
+		height: 50px;
+		box-sizing: border-box;
+		background: #fff;
+		position: relative;
+		&:hover span {
+			left: 0;
+			top: 0;
+			box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #fff;
+		}
+		span {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 98%;
+			height: 50px;
+			background: #fff;
+			box-sizing: border-box;
+			color: #4d4d4d;
+			font-size: 15px;
+			letter-spacing: 0.1em;
+			box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #fff;
+			border-radius: 10px;
+			position: absolute;
+			top: -5px;
+			left: 0;
+			transition-duration: 0.2s;
+		}
+	}
+	// 下の説明欄
+	.remark_column {
+		margin-top: 30px;
+		padding: 0 10%;
+		font-size: 14px;
+		width: 100%;
+		line-height: 1.8em;
+	}
+}
 
-
-
+/* ====================
+	Address
+==================== */
+.address {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	display: flex;
+	// 見出し
+	h3 {
+		font-size: 30px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+	}
+}
 
 
 
@@ -555,11 +702,12 @@ header {
 	/* ====================
 		Stylist
 	==================== */
-	.stylist_progile {
-		display: block;
+	.stylist_profile {
+		display: block !important;
 		text-align: center;
 		h4 {
 			font-size: 20px;
+			padding: 10% 0;
 		}
 	}
 }
