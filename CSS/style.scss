@@ -1,0 +1,821 @@
+@charset "UTF-8";
+
+/*===================== 
+	変数の指定
+===================== */
+/* color指定 */
+$main-color:#6e6e6e;
+$name-color: #333;
+$sp-color: #fff;
+/* font-familyの指定 */
+$font-family: 'Sawarabi Gothic', sans-serif;
+
+/* ====================
+	html & body
+==================== */
+html, body {
+	font-family: $font-family;
+	color: $main-color;
+	line-height: 1;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	a {
+		text-decoration: none;
+	}
+	li {
+		list-style: none;
+	}
+	&::before, &::after {
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+}
+
+/* ======================
+	header
+====================== */
+header {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	height: 60px;
+	padding: 0 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	box-sizing: border-box;
+	background: #fff;
+
+	// ヘッダーロゴの指定
+	h1 {
+		display: inline-block;
+		width: 120px;
+		font-size: 30px;
+		position: absolute;
+		left: 0;
+		top: 14px;
+		background: #fff;
+		padding: 0 10%;
+		font-family: 'WindSong', cursive;
+		// ヘッダーリンクの指定
+		a {
+			color: #ddf3f7;
+			text-shadow: 1px 1px 0 #4d4d4d, -1px 1px 0 #4d4d4d, 1px -1px 0 #4d4d4d, -1px -1px 0 #4d4d4d;	
+		}
+	}
+
+/* ヘッダーナビの指定 */	
+	nav {
+		display: inline-block;
+		position: relative;
+		.menu-ul {
+			display: flex;
+			justify-content: flex-end;
+			margin: 0;
+			li {
+				padding: 15px 20px;
+				position: relative;
+				a {
+					color: $main-color;
+				}
+				&::after {
+					position: absolute;
+					bottom: 4px;
+					left: 0;
+					right:0;
+					content: "";
+					width: 80%;
+					height: 2px;
+					background: #333;
+					transform: scale(0, 1);
+					transform-origin: center top;
+					transition: transform .3s;
+					margin: auto;
+				}
+				// ホバーしたら下線ビヨーン
+				&:hover::after {
+					transform: scale(1, 1);
+				}
+			}
+		}
+	}
+}
+
+/* ====================
+	News
+===================== */
+.news {
+	// 見出し
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	// お知らせの中身
+	dl {
+		padding: 15px 0;
+		border-bottom: 1px solid rgb(90, 90, 90);
+		font-weight: 200;
+		font-size: 13px;
+	}
+	dt {
+		padding-bottom: 5px;
+		font-size: 13px;
+	}
+}
+
+/* ====================
+	Menu
+==================== */
+.menu {
+	// 見出し
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	// メニューの中身
+	table {
+		margin-right: auto;
+		margin-left: auto;
+		font-size: 13px;
+		width: 100%;
+		.td-left {
+			padding-left: 10%;
+		}
+		.td-right {
+			text-align: right;
+			padding-right: 10%;
+		}
+		th, td {
+			padding: 10px;
+			transition: 0.2s;
+		}
+	}
+	thead {
+		font-size: 20px;
+		th {
+			padding-left: 10%;
+		}
+	}
+	tbody {
+		margin-bottom: 30px;
+		&:hover, td {
+			color: $main-color;
+			background-color: #f4f3ef;
+			&tr:hover {
+				color: #333;
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+/* ===================
+	About
+==================== */
+.about {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	// 見出し
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	.about_salon {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		// aboutの中身
+		img {
+			width: 230px;
+		}
+		.salon_info {
+			font-size: 13px;
+			letter-spacing: 0.05em;
+			padding-left: 10%;
+			line-height: 2.3em;
+		}
+		.salon_calender {
+			max-width: 800px;
+			min-width: 300px;
+			margin: 2.0833% auto;
+		}
+		.google_cal {
+			position: relative;
+			padding-top: 10%;
+			height: 0;
+			overflow: hidden;
+			iframe, object, embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+/* ====================
+	Stylist
+==================== */
+.stylist {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	// 見出し
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	.image {
+		background-image: url("../img/stylist_img.jpg");
+		width: 250px;
+		height: 250px;
+		border-radius: 50%;
+		background-position: center top;
+		margin: 0 auto;
+	}
+	.stylist_profile {
+		text-align: center;
+		line-height: 2.0em;
+		margin-top: 10%;
+		letter-spacing: 0.1em;
+		h4 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+}
+
+/* ====================
+	Reservation
+==================== */
+.reservation {
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-top: 120px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	// 見出し
+	h3 {
+		font-size: 25px;
+		text-align: center;
+		padding: 15px 55px;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: inline-block;
+			width: 45px;
+			height: 1px;
+			background-color: $main-color;
+		}
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+	}
+	// ボタンのスタイル
+	.btn_reserv {
+		line-height: 1.5em;
+		display: flex;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 14px;
+		section {
+			max-width: 300px;
+			margin: 0 auto;
+			// ボタンの下の文字
+			.line {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				&::before, &::after {
+					content: "";
+					width: 1px;
+					height: 20px;
+					background-color: #4d4d4d;
+				}
+				&::before {
+					margin-right: 18px;
+					transform: rotate(-35deg);
+				}
+				&::after {
+					margin-left: 18px;
+					transform: rotate(35deg);
+				}
+			}
+			p {
+				letter-spacing: 0.1em;
+				margin-top: 15px;
+				font-size: 15px;
+			}
+		}
+	}
+	a.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 98%;
+		height: 50px;
+		box-sizing: border-box;
+		background: #fff;
+		position: relative;
+		&:hover span {
+			left: 0;
+			top: 0;
+			box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #fff;
+		}
+		span {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 98%;
+			height: 50px;
+			background: #fff;
+			box-sizing: border-box;
+			color: #4d4d4d;
+			font-size: 15px;
+			letter-spacing: 0.1em;
+			box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #fff;
+			border-radius: 10px;
+			position: absolute;
+			top: -5px;
+			left: 0;
+			transition-duration: 0.2s;
+		}
+	}
+	// 下の説明欄
+	.remark_column {
+		margin-top: 30px;
+		padding: 0 10%;
+		font-size: 14px;
+		width: 100%;
+		line-height: 1.8em;
+	}
+}
+
+/* ====================
+	Address
+==================== */
+.address {
+	width: 90%;
+	height: 180px;
+	margin-top: 50px;
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	display: flex;
+	line-height: 2.5em;
+	// ロゴ
+	h3 {
+		font-size: 30px;
+		text-align: center;
+		position: relative;
+		display: inline-block;
+		margin-left: 10%;
+		font-family: 'WindSong', cursive;
+	}
+	section {
+		margin: 0 0 0 auto;
+		padding-right: 10%;
+		h5 {
+			font-size: 18px;
+			text-align: center;
+			// salon infoの下の装飾
+			span {
+				position: relative;
+				display: inline-block;
+				padding-bottom: 0.2em;
+				border-bottom: 1px solid #4d4d4d;
+				&::before, &::after {
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					content: "";
+					border: 10px solid transparent;
+				}
+				&::before {
+					border-top: 10px solid #4d4d4d;
+				}
+				&::after {
+					margin-top: -1px;
+					border-top: 10px solid #fff;
+				}
+			}
+		}
+		.info {
+			padding-top: 20px;
+			font-size: 14px;
+			letter-spacing: 0.1em;
+		}
+	}
+}
+
+/* ====================
+	TOPに戻るボタン
+==================== */
+#page_top {
+	text-align: right;
+	margin-right: 5%;
+	a {
+		background-color: #4d4d4d;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		padding: 16px 20px;
+		border-radius: 50%;
+	}
+}
+
+
+/* ====================
+	Footer
+==================== */
+footer {
+	width: 100%;
+	height: 60px;
+	position: relative;
+	p {
+		font-size: 10px;
+		letter-spacing: 0.05em;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+
+/* ==========▼▼▼ ここからレスポンシブ用 ▼▼▼========== */
+/* ====================
+変数の指定
+==================== */
+// PCの指定
+// $pc: 641px;
+// スマホの指定
+// $sp: 640px; 
+
+/* ====================
+	メディアクエリ
+====================*/
+// @mixin pc {
+// 	@media (min-width: ($pc)) {
+// 		@content;
+// 	}
+// }
+// @mixin sp {
+// 	@media (max-width: ($sp)) {
+// 		@content;
+// 	}
+// }
+// ＠includeを書いて上を適用
+// .body img{
+// 	@include pc {
+// 		width: 350px;
+// 		height: auto;
+// 	};
+// 	@include sp {
+// 		width: 100%;
+// 		height: auto;
+// 	};
+// }
+/* pc表示の時のヘッダーはスマホメニュー出さない */
+// ハンバーガー表示されちゃうからcssにして消してみる
+	// .pc-nav {
+	// 	@include sp {
+	// 		display: none;
+	// 	}
+	// }
+@media screen and (min-width: 640px){
+	// スマホ用ヘッダー非表示
+	.sp-nav {
+		display: none;
+	}
+	// スマホ用Googleカレンダー非表示
+	.sp_google_cal {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	// PC用ヘッダー非表示
+	.pc-nav {
+		display: none;
+	}
+
+
+/* ====================
+スマホ用ヘッダーの指定 
+==================== */
+/* スマホ用メニュー（ハンバーガー実装） */
+	.sp-nav {
+		// スマホ表示の時はヘッダーでPCメニュー出さない
+		
+		// @include pc {
+		// 	display: none;
+		// }
+
+
+		// スマホ用 三 のスタイル
+		// ▼前面表示にしたいからz-indexは1を指定
+		z-index: 1;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		// ▼全画面表示にしたいから100vhに指定
+		height: 100vh;
+		display: block;
+		background: rgba(0, 0, 0, 0.8);
+		// ▼三と閉じるを押した時に表示・非表示のアニメーション
+		transition: all .2s ease-in-out;
+		// スマホメニューを一回非表示
+		opacity: 0;
+		transform: translateY(-100%);
+
+		// リストの指定
+		ul {
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+		li {
+			margin: 0;
+			padding: 0;
+			span {
+				font-size: 15px;
+				color: #fff;
+			}
+			a, span {
+				display: block;
+				padding: 20px 0;
+			}
+		}
+		// ▼閉じるボタンの装飾
+		// 基準のli要素
+		.close {
+			position: relative;
+			padding-left: 20px;
+			padding-bottom: 40px;
+			// Xの` 1こめ
+			&::before {
+				content: "";
+				position: absolute;
+				top: 68%;
+				left: 38%;
+				display: block;
+				width: 16px;
+				height: 1px;
+				background: #fff;
+				transform: rotate(45deg);
+			}
+			// Xの/ 2こめ
+			&::after {
+				content: "";
+				position: absolute;
+				top: 41%;
+				left: -9%;
+				display: block;
+				width: 16px;
+				height: 1px;
+				background: #fff;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	/* ====================
+		ハンバーガーの線
+	==================== */
+	#hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 0 0 auto;
+		// ハンバーガーの真ん中
+		span {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: #333;
+			transform: translateY(-50%);
+		}
+		// ハンバーガーの上
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: #333;
+		}
+		// ハンバーガーの下
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 70%;
+			height: 2px;
+			background-color: #333;
+		}
+	}
+
+	/* ====================
+		toggleClass
+	====================*/
+	.toggle {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	/* ====================
+		About
+	==================== */
+	.about_salon {
+		display: block !important;
+		img {
+			width: 100%;
+			margin: 5% 10%;
+		}
+		.salon_info {
+			width: 100%;
+			margin: 0 auto;
+			padding: 5% 10%;
+		}
+	}
+	// PC用カレンダー非表示
+	.google_cal {
+		display: none !important;
+	}
+	.sp_google_cal {
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	/* ====================
+		Stylist
+	==================== */
+	.stylist_profile {
+		display: block !important;
+		text-align: center;
+		h4 {
+			font-size: 20px;
+			padding: 10% 0;
+		}
+	}
+	/* ====================
+		Salon info
+	==================== */
+	.address {
+		width: 100%;
+		display: block;
+		padding: 10px 12%;
+		h3 {
+			display: none;
+		}
+		p {
+			line-height: 1.8rem;
+		}
+	}
+
+	/* ====================
+		TOPに戻るボタン
+	==================== */
+	#page_top {
+		margin-right: 10px;
+	}
+
+	/* ====================
+		Footer
+	==================== */
+	footer {
+		height: 100px;
+		p {
+			margin-top: 20px;
+		}
+		
+	}
+}
+/* ==========▲▲▲ ここまでレスポンシブ用 ▲▲▲========== */
