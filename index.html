@@ -17,17 +17,17 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
 	<header>
 		<!-- ヘッダーロゴ -->
 		<h1>
-			<a href="#page_top">Blessing</a>
+			<a href="#">Blessing</a>
 		</h1>
 		<!-- PC用メニュー -->
 		<nav class="pc-nav">
 			<ul class="menu-ul">
-				<li><a href="#page_top">Home</a></li>
 				<li><a href="#page_news">News</a></li>
 				<li><a href="#page_menu">Menu</a></li>
 				<li><a href="#page_about">About</a></li>
@@ -38,7 +38,6 @@
 		<!-- スマホ用メニュー -->
 		<nav class="sp-nav">
 			<ul class="menu-ul">
-				<li><a href="#page_top">Home</a></li>
 				<li><a href="#page_news">News</a></li>
 				<li><a href="#page_menu">Menu</a></li>
 				<li><a href="#page_about">About</a></li>
@@ -54,7 +53,7 @@
 	</header>
 
 <!-- メインイメージ（スライダー） -->
-	<div class="my-slider">
+	<div class="my-slider" id="page_top">
 		<div><img src="img/top_img_01.jpg"></div>
 		<div><img src="img/top_img_02.jpg"></div>
 		<div><img src="img/top_img_03.jpg"></div>
@@ -249,26 +248,17 @@
 		</section>
 	</div>
 
+	<!-- TOP戻るボタン -->
+	<div id="page_top">
+		<a href="#"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+	</div>
+
 	<footer>
 		<p>Copyright   2020.Blessing</p>
 	</footer>
 
 	<!-- headerレスポンシブ用jQuery -->
 	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-	<!-- スマホナビの表示・非表示 -->
-	<script>
-		$(window).on('load', function() {
-			// humにハンバーガーメニューと閉じるボタンを格納
-			const hum = $('#hamburger, .close')
-			// navにスマホのナビメニューを格納
-			const nav = $('.sp-nav')
-			// humに入れた要素をクリックしたら
-			hum.on('click', function(){
-				// navに入れた要素に.toggleを足したり消したらラジバンダリ
-				nav.toggleClass('toggle');
-			});
-		}(jQuery));
-	</script>
 	
 	<!-- slick jsの読込み -->
 	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
@@ -286,8 +276,11 @@
 			});
 		});
 	</script>
-	<!-- <script　type="text/javascript" src="js/script.js"></script> -->
-	<script　type="text/javascript" src="js/script.js"></script>
+
+	<!-- FontAwesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
 
 	</body>
 </html>

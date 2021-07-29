@@ -56,7 +56,7 @@ header {
 		font-size: 30px;
 		position: absolute;
 		left: 0;
-		top: 12px;
+		top: 14px;
 		background: #fff;
 		padding: 0 10%;
 		font-family: 'WindSong', cursive;
@@ -469,7 +469,7 @@ header {
 	Address
 ==================== */
 .address {
-	width: 100%;
+	width: 90%;
 	height: 180px;
 	margin-top: 50px;
 	margin-bottom: 80px;
@@ -521,6 +521,23 @@ header {
 		}
 	}
 }
+
+/* ====================
+	TOPに戻るボタン
+==================== */
+#page_top {
+	text-align: right;
+	margin-right: 5%;
+	a {
+		background-color: #4d4d4d;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		padding: 16px 20px;
+		border-radius: 50%;
+	}
+}
+
 
 /* ====================
 	Footer
@@ -772,12 +789,24 @@ footer {
 		Salon info
 	==================== */
 	.address {
+		width: 100%;
 		display: block;
 		padding: 10px 12%;
 		h3 {
 			display: none;
 		}
+		p {
+			line-height: 1.8rem;
+		}
 	}
+
+	/* ====================
+		TOPに戻るボタン
+	==================== */
+	#page_top {
+		margin-right: 10px;
+	}
+
 	/* ====================
 		Footer
 	==================== */
