@@ -72,8 +72,3 @@ window.addEventListener('DOMContentLoaded', function(){
 		});
 	});
 });
-
-
-/* ====================
-	TOPに戻る
-==================== */

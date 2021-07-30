@@ -532,18 +532,32 @@ header {
 /* ====================
 	TOPに戻るボタン
 ==================== */
+.top_btn {
+	height: 97%;
+}
+.go_top {
+	position: fixed;
+	z-index: 100;
+	right: 10px;
+	bottom: 30px;
+	opacity: 0.5;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.9;
+	}
+}
 #page_top {
 	text-align: right;
-	margin-right: 5%;
 	a {
 		background-color: #4d4d4d;
 		color: #fff;
 		text-align: center;
 		text-decoration: none;
-		padding: 16px 20px;
+		padding: 15px 20px;
 		border-radius: 50%;
 	}
 }
+
 
 
 /* ====================
