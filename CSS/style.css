@@ -105,12 +105,19 @@ header nav .menu-ul li:hover::after {
 }
 
 /* ====================
+	Slider
+===================== */
+.my-slider {
+  width: 100%;
+}
+
+/* ====================
 	News
 ===================== */
 .news {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 120px;
+  margin-top: 250px;
   margin-bottom: 80px;
 }
 
@@ -161,7 +168,7 @@ header nav .menu-ul li:hover::after {
 .menu {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 120px;
+  margin-top: 250px;
   margin-bottom: 80px;
 }
 
@@ -243,7 +250,7 @@ header nav .menu-ul li:hover::after {
 .about {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 120px;
+  margin-top: 250px;
   margin-bottom: 80px;
   box-sizing: border-box;
 }
@@ -321,7 +328,7 @@ header nav .menu-ul li:hover::after {
 .stylist {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 120px;
+  margin-top: 250px;
   margin-bottom: 80px;
   box-sizing: border-box;
 }
@@ -385,7 +392,7 @@ header nav .menu-ul li:hover::after {
 .reservation {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 120px;
+  margin-top: 250px;
   margin-bottom: 80px;
   box-sizing: border-box;
 }
