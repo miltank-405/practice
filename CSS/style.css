@@ -117,7 +117,7 @@ header nav .menu-ul li:hover::after {
 .news {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 250px;
+  margin-top: 180px;
   margin-bottom: 80px;
 }
 
@@ -637,6 +637,9 @@ footer p {
 スマホ用ヘッダーの指定 
 ==================== */
   /* スマホ用メニュー（ハンバーガー実装） */
+  .menu-ul li a {
+    color: #fff !important;
+  }
   .sp-nav {
     z-index: 1;
     position: fixed;
@@ -658,24 +661,26 @@ footer p {
     align-items: center;
     height: 100%;
   }
-  .sp-nav li {
+  .sp-nav ul li {
     margin: 0;
     padding: 0;
   }
-  .sp-nav li span {
+  .sp-nav ul li span {
     font-size: 15px;
     color: #fff;
-  }
-  .sp-nav li a, .sp-nav li span {
     display: block;
     padding: 20px 0;
   }
-  .sp-nav .close {
+  .sp-nav ul li a {
+    display: block;
+    padding: 30px 0;
+  }
+  .sp-nav ul .close {
     position: relative;
     padding-left: 20px;
     padding-bottom: 40px;
   }
-  .sp-nav .close::before {
+  .sp-nav ul .close::before {
     content: "";
     position: absolute;
     top: 68%;
@@ -686,7 +691,7 @@ footer p {
     background: #fff;
     transform: rotate(45deg);
   }
-  .sp-nav .close::after {
+  .sp-nav ul .close::after {
     content: "";
     position: absolute;
     top: 41%;

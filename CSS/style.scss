@@ -118,7 +118,7 @@ header {
 	// 見出し
 	padding-left: 15%;
 	padding-right: 15%;
-	margin-top: 250px;
+	margin-top: 180px;
 	margin-bottom: 80px;
 	h3 {
 		font-size: 25px;
@@ -627,6 +627,9 @@ footer {
 スマホ用ヘッダーの指定 
 ==================== */
 /* スマホ用メニュー（ハンバーガー実装） */
+	.menu-ul li a {
+		color: #fff !important;
+	}
 	.sp-nav {
 		// スマホ表示の時はヘッダーでPCメニュー出さない
 		
@@ -660,48 +663,50 @@ footer {
 			justify-content: center;
 			align-items: center;
 			height: 100%;
-		}
-		li {
-			margin: 0;
-			padding: 0;
-			span {
-				font-size: 15px;
-				color: #fff;
+			li {
+				margin: 0;
+				padding: 0;
+				span {
+					font-size: 15px;
+					color: #fff;
+					display: block;
+					padding: 20px 0;
+				}
+				a {
+					display: block;
+					padding: 30px 0;
+				}
 			}
-			a, span {
-				display: block;
-				padding: 20px 0;
-			}
-		}
-		// ▼閉じるボタンの装飾
-		// 基準のli要素
-		.close {
-			position: relative;
-			padding-left: 20px;
-			padding-bottom: 40px;
-			// Xの` 1こめ
-			&::before {
-				content: "";
-				position: absolute;
-				top: 68%;
-				left: 38%;
-				display: block;
-				width: 16px;
-				height: 1px;
-				background: #fff;
-				transform: rotate(45deg);
-			}
-			// Xの/ 2こめ
-			&::after {
-				content: "";
-				position: absolute;
-				top: 41%;
-				left: -9%;
-				display: block;
-				width: 16px;
-				height: 1px;
-				background: #fff;
-				transform: rotate(-45deg);
+			// ▼閉じるボタンの装飾
+			// 基準のli要素
+			.close {
+				position: relative;
+				padding-left: 20px;
+				padding-bottom: 40px;
+				// Xの` 1こめ
+				&::before {
+					content: "";
+					position: absolute;
+					top: 68%;
+					left: 38%;
+					display: block;
+					width: 16px;
+					height: 1px;
+					background: #fff;
+					transform: rotate(45deg);
+				}
+				// Xの/ 2こめ
+				&::after {
+					content: "";
+					position: absolute;
+					top: 41%;
+					left: -9%;
+					display: block;
+					width: 16px;
+					height: 1px;
+					background: #fff;
+					transform: rotate(-45deg);
+				}
 			}
 		}
 	}
